@@ -1,0 +1,48 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ZIP Attachment Check</title>
+
+  <style>
+    .green {
+      color: green;
+      font-weight: bold;
+    }
+
+    .red {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>ZIP Attachment Check</h1>
+
+<form action="/" method="post">
+
+  <label>File name:</label>
+  <input type="text" name="filename" required>
+
+  <br><br>
+
+  <label>File size (MB):</label>
+  <input type="number" name="size" step="0.1" min="0" required>
+
+  <br><br>
+
+  <button type="submit">Check</button>
+
+</form>
+
+<p th:if="${result}"
+   th:text="${result}"
+   th:class="${color}">
+</p>
+
+</body>
+</html>
